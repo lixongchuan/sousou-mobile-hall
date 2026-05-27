@@ -48,19 +48,29 @@ sousou-mobile-hall/             <-- 仓库根目录
 
 ### 第一步：启动后端服务 (Spring Boot)
 
-1. 打开终端，导航至后端根目录：
+本项目后端基于 Spring Boot 框架开发。由于大多数本地电脑未全局配置 Maven 环境变量，**推荐使用 IDE 启动**。
+
+#### 方法一：使用集成开发环境 (推荐 ⭐)
+1. **打开项目**：使用 **IntelliJ IDEA**、**Eclipse** 或 **VS Code** 打开 `sousou-backend` 文件夹。
+2. **自动加载**：IDE 会在后台自动识别根目录下的 `pom.xml`，并自动下载项目所需的依赖包（包括 `jaudiotagger` 音频解析库等）。
+3. **运行主类**：在项目目录树中导航并双击打开主入口文件：
+   `src/main/java/com/sousou/demo/DemoApplication.java`
+   右键点击该文件，选择 **`Run 'DemoApplication'`** (或直接点击类名左侧的绿色播放按钮 ▶) 即可启动后端服务。
+4. 如果不行请将自行将报错提交给Ai解决！！！
+
+#### 方法二：使用 Maven 命令行 (需本地已配置 Maven 环境变量)
+1. 打开终端（Terminal/Git Bash），导航至后端根目录：
    ```bash
    cd sousou-backend
    ```
-2. 清理并编译项目：
+2. 执行清理、编译并运行命令：
    ```bash
-   mvn clean install
+   mvn clean spring-boot:run
    ```
-3. 运行 Spring Boot 服务：
-   ```bash
-   mvn spring-boot:run
-   ```
-4. **验证**：后端默认运行在 `8080` 端口。在浏览器打开 `http://localhost:8080/api/music/list`，若能正常输出解析后的 FLAC 歌词与 Base64 封面 JSON，说明后端启动成功。
+
+#### 验证后端启动
+后端服务默认运行在 `8080` 端口。请在浏览器中打开以下链接进行测试：
+[http://localhost:8080/api/music/list](http://localhost:8080/api/music/list)
 
 ---
 
@@ -125,4 +135,4 @@ sousou-mobile-hall/             <-- 仓库根目录
 ## 📜 许可证
 
 本项目作为学术实验和研究使用，遵循 MIT 许可证。
-```
+
