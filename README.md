@@ -61,7 +61,8 @@ sousou-mobile-hall/             <-- 仓库根目录
    mvn spring-boot:run
    ```
 4. **验证**：后端默认运行在 `8080` 端口。在浏览器打开 `http://localhost:8080/api/music/list`，若能正常输出解析后的 FLAC 歌词与 Base64 封面 JSON，说明后端启动成功。
-
+如果代码运行有问题可以找到sousou-backend\src\main\java\com\sousou\demo\DemoApplication.java
+直接运行这个java文件，即可启动后端
 ---
 
 ### 第二步：启动前端服务 (Vue 3 / Vite)
